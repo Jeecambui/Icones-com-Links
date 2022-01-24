@@ -10,6 +10,12 @@ body{
     align-items: center;
     min-height: 100vh;
     background: #000;
+    margin: 0;
+    transition: background 0.2s linear;
+}
+
+body.dark{
+    background-color: #fff;
 }
 
 ul{
@@ -45,12 +51,12 @@ ul li::before{
 
 ul li:nth-child(1)::before{
     content: '\f09b';
-    color: #fff;
-    border-bottom: 4px solid #fff;
+    color: #888888;
+    border-bottom: 4px solid #888888;
 }
 
 ul li:nth-child(2)::before{
-    content: '\f232';
+    content: '\f003';
     color: #25d366;
     border-bottom: 4px solid #25d366;
 }
@@ -63,4 +69,53 @@ ul li:nth-child(3)::before{
 
 ul li:hover::before{
     height: 100%;
+}
+
+
+/*
+    implementação de outro projeto
+*/
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+
+.label {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5);
+    
+    top: -310px;
+    right: -190px;
+}
+
+.ball{
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transition: transform 0.2s linear;
+}
+
+.fa-moon-o{
+    color: #f1c40f;
+}
+
+.fa-sun-o{
+    color: #f39c12;
 }
